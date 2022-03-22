@@ -1,9 +1,52 @@
 
 <MainWindow>:
-    orientation: 'vertical'
+    spacing: dp(8)
     canvas.before:
         Color:
             rgba: rgba('#ffffff')
         Rectangle:
             pos: self.pos
             size: self.size
+    BoxLayout:
+        id: nav_menu
+        size_hint_x: .15 #0 - 1
+        canvas.before:
+            Color:
+                rgba: [0,0,1,.1]
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        size_hint_x: .85 #0 - 1
+        spacing: dp(8)
+        orientation: 'vertical'
+        padding: [dp(0), dp(8), dp(12), dp(8)]
+        canvas.before:
+            Color:
+                rgba: [1,1,0,.1]
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            id: actionbar
+            size_hint_y: None
+            height: dp(64)
+            canvas.before:
+                Color:
+                    rgba: [1,0,0,.1]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+        BoxLayout:
+            ScreenManager:
+                id: scrn_mngr
+                Screen:
+                    name: 'scrn_overview'
+                Screen:
+                    name: 'scrn_analytics'
+                Screen:
+                    name: 'scrn_sales'
+                Screen:
+                    name: 'scrn_customers'
+                Screen:
+                    name: 'scrn_finance'
