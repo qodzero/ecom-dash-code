@@ -1,3 +1,5 @@
+#:import IconButton widgets.buttons.IconButton
+#:import Text widgets.labels.Text
 
 <MainWindow>:
     spacing: dp(8)
@@ -9,13 +11,77 @@
             size: self.size
     BoxLayout:
         id: nav_menu
-        size_hint_x: .15 #0 - 1
-        canvas.before:
-            Color:
-                rgba: [0,0,1,.1]
-            Rectangle:
-                pos: self.pos
-                size: self.size
+        size_hint_x: .2 #0 - 1
+        orientation: 'vertical'
+        padding: dp(8)
+        BoxLayout:
+            id: logo_nbox
+            size_hint_y: .15
+            AnchorLayout:
+                anchor_x: 'right'
+                size_hint_x: None
+                width: dp(32)
+                IconButton:
+                    source: 'assets/imgs/logo.png'
+                    size_hint_y: None
+                    height: dp(32)
+            Text:
+                text: 'Unique Dash'
+                font_name: app.fonts.heading
+                font_size: app.fonts.size.h3
+        GridLayout:
+            id: tabs_box
+            cols: 1
+            spacing: dp(4)
+            size_hint_y: .6
+            canvas.before:
+                Color:
+                    rgba: rgba("#c4c4c4")
+                Rectangle:
+                    pos: self.pos
+                    size: [self.size[0], dp(1)]
+            NavTab:
+                text: 'Overview'
+                state: 'down'
+                icon: 'assets/icons/ic_grid.png'
+                icon_active: 'assets/icons/ic_grid_active.png'
+            NavTab:
+                text: 'Analytics'
+                icon: 'assets/icons/ic_trend.png'
+                icon_active: 'assets/icons/ic_trend_active.png'
+            NavTab:
+                text: 'Sales'
+                icon: 'assets/icons/ic_cart.png'
+                icon_active: 'assets/icons/ic_cart_active.png'
+            NavTab:
+                text: 'Customers'
+                icon: 'assets/icons/ic_people.png'
+                icon_active: 'assets/icons/ic_people_active.png'
+            NavTab:
+                text: 'Finance'
+                icon: 'assets/icons/ic_money.png'
+                icon_active: 'assets/icons/ic_money_active.png'
+            NavTab:
+                text: 'Orders'
+                icon: 'assets/icons/ic_bag.png'
+                icon_active: 'assets/icons/ic_bag_active.png'
+        GridLayout:
+            id: sec_box
+            size_hint_y: .3
+            cols: 1
+            padding: dp(12)
+            NavTab:
+                text: 'Support'
+                icon: 'assets/icons/ic_chat.png'
+                icon_active: 'assets/icons/ic_chat_active.png'
+            NavTab:
+                text: 'Settings'
+                icon: 'assets/icons/ic_settings.png'
+                icon_active: 'assets/icons/ic_settings_active.png'
+            NavTab:
+                text: 'Log out'
+                icon: 'assets/icons/ic_cart.png'
+                icon_active: 'assets/icons/ic_cart_active.png'
     BoxLayout:
         size_hint_x: .85 #0 - 1
         spacing: dp(8)
@@ -50,3 +116,39 @@
                     name: 'scrn_customers'
                 Screen:
                     name: 'scrn_finance'
+
+<NavTab>:
+    background_normal: ''
+    background_down: ''
+    background_color: [0,0,0,0]
+    group: 'tabs'
+    size_hint_y: None
+    height: dp(42)
+    canvas.before:
+        Color:
+            rgba: [0,0,0,0] if self.state == 'normal' else rgba("#E1F1FF")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: [0,0,0,0] if self.state == 'normal' else app.colors.primary
+        Rectangle:
+            pos: [self.pos[0]+(self.size[0]-dp(8)), self.pos[1]]
+            size: [dp(8), self.size[1]]
+    AnchorLayout:
+        size_hint_x: None
+        width: self.height
+        padding: dp(14)
+        Widget:
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: root.icon if root.state == 'normal' else root.icon_active
+    Text:
+        halign: 'left'
+        valign: 'middle'
+        text: root.text
+        color: rgba('c4c4c4') if root.state == 'normal' else app.colors.primary
