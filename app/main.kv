@@ -2,6 +2,8 @@
 #:import Text widgets.labels.Text
 #:import ShadowBox widgets.shadow.ShadowBox
 
+#: import Home views.home.Home
+
 <MainWindow>:
     spacing: dp(8)
     canvas.before:
@@ -123,6 +125,7 @@
                         size_hint: [None, None]
                         size: [dp(42), dp(42)]
                         padding: dp(10)
+                        elevation: 4
                         IconButton:
                             source: 'assets/icons/ic_search.png'
                 AnchorLayout:
@@ -131,6 +134,8 @@
                         size_hint: [None, None]
                         size: [dp(42), dp(42)]
                         padding: dp(10)
+                        elevation: 4
+                        elevation: 4
                         IconButton:
                             source: 'assets/icons/ic_notif.png'
                 AnchorLayout:
@@ -138,6 +143,7 @@
                         radius: [self.height]
                         size_hint: [None, None]
                         size: [dp(42), dp(42)]
+                        elevation: 4
                         Widget:
                             canvas.before:
                                 Color:
@@ -152,6 +158,8 @@
                 id: scrn_mngr
                 Screen:
                     name: 'scrn_overview'
+                    Home:
+                        id: home
                 Screen:
                     name: 'scrn_analytics'
                 Screen:

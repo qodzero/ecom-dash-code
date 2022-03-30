@@ -1,0 +1,209 @@
+<Home>:
+    padding: dp(14)
+    spacing: dp(16)
+    BoxLayout:
+        spacing: dp(16)
+        orientation: 'vertical'
+        size_hint_x: .75
+        BoxLayout:
+            spacing: dp(16)
+            size_hint_y: .2
+            ShadowBox:
+                radius: [dp(14)]
+                elevation: 2
+                padding: dp(14)
+                orientation: 'vertical'
+                spacing: dp(8)
+                BoxLayout:
+                    spacing: dp(14)
+                    AnchorLayout:
+                        size_hint_x: None
+                        width: self.height
+                        IconButton:
+                            source: 'assets/icons/ic_trend-lg.png'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: dp(8)
+                        Text:
+                            text: 'Revenue'
+                            font_name: app.fonts.body
+                            font_size: app.fonts.size.h3
+                            color: app.colors.grey_dark
+                        Text:
+                            text: '$ 28,17.45'
+                            font_name: app.fonts.heading
+                            font_size: app.fonts.size.h2
+                            color: app.colors.secondary
+                BoxLayout:
+                    size_hint_y: None
+                    height: dp(24)
+                    spacing: dp(8)
+                    Text:
+                        text: 'Earn Of The Month'
+                        color: app.colors.grey_dark
+                        font_name: app.fonts.body
+                        font_size: app.fonts.size.h6
+                        size_hint_x: .75
+                    BoxLayout:
+                        size_hint_x: .25
+                        padding: [dp(4), dp(2)]
+                        canvas.before:
+                            Color:
+                                rgba: rgba("#E1F1FF")
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [self.height/2]
+                        Text:
+                            text: '+8.5%'
+                            color: app.colors.primary
+                            font_name: app.fonts.subheading
+                            font_size: app.fonts.size.h6
+                            halign: 'center'
+            ShadowBox:
+                radius: [dp(14)]
+                elevation: 2
+                padding: dp(14)
+                orientation: 'vertical'
+                spacing: dp(8)
+                BoxLayout:
+                    spacing: dp(14)
+                    AnchorLayout:
+                        size_hint_x: None
+                        width: self.height
+                        IconButton:
+                            source: 'assets/icons/ic_bag-lg.png'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: dp(8)
+                        Text:
+                            text: 'Orders'
+                            font_name: app.fonts.body
+                            font_size: app.fonts.size.h3
+                            color: app.colors.grey_dark
+                        Text:
+                            text: '2,473'
+                            font_name: app.fonts.heading
+                            font_size: app.fonts.size.h2
+                            color: app.colors.secondary
+                BoxLayout:
+                    size_hint_y: None
+                    height: dp(24)
+                    spacing: dp(8)
+                    Text:
+                        text: 'This Month'
+                        color: app.colors.grey_dark
+                        font_name: app.fonts.body
+                        font_size: app.fonts.size.h6
+                        size_hint_x: .75
+                    BoxLayout:
+                        size_hint_x: .25
+                        padding: [dp(4), dp(2)]
+                        canvas.before:
+                            Color:
+                                rgba: rgba("#E1F1FF")
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [self.height/2]
+                        Text:
+                            text: '+8.5%'
+                            color: app.colors.primary
+                            font_name: app.fonts.subheading
+                            font_size: app.fonts.size.h6
+                            halign: 'center'
+            ShadowBox:
+                radius: [dp(14)]
+                elevation: 2
+                padding: dp(14)
+                orientation: 'vertical'
+                spacing: dp(8)
+                BoxLayout:
+                    spacing: dp(14)
+                    AnchorLayout:
+                        size_hint_x: None
+                        width: self.height
+                        IconButton:
+                            source: 'assets/icons/ic_people-lg.png'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: dp(8)
+                        Text:
+                            text: 'Customers'
+                            font_name: app.fonts.body
+                            font_size: app.fonts.size.h3
+                            color: app.colors.grey_dark
+                        Text:
+                            text: '262, 473'
+                            font_name: app.fonts.heading
+                            font_size: app.fonts.size.h2
+                            color: app.colors.secondary
+                BoxLayout:
+                    size_hint_y: None
+                    height: dp(24)
+                    spacing: dp(8)
+                    Text:
+                        text: 'New Users This Month'
+                        color: app.colors.grey_dark
+                        font_name: app.fonts.body
+                        font_size: app.fonts.size.h6
+                        size_hint_x: .75
+                    BoxLayout:
+                        size_hint_x: .25
+                        padding: [dp(4), dp(2)]
+                        canvas.before:
+                            Color:
+                                rgba: rgba("#E1F1FF")
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [self.height/2]
+                        Text:
+                            text: '+8.5%'
+                            color: app.colors.primary
+                            font_name: app.fonts.subheading
+                            font_size: app.fonts.size.h6
+                            halign: 'center'
+        BoxLayout:
+            spacing: dp(8)
+            size_hint_y: .5
+            orientation: 'vertical'
+            ShadowBox:
+                radius: [dp(14)]
+                elevation: 1
+                orientation: 'vertical'
+                spacing: dp(8)
+                padding: dp(12)
+                BoxLayout:
+                    spacing: dp(8)
+                    size_hint_y: None
+                    height: dp(42)
+                    BoxLayout:
+                        orientation: 'vertical'
+                        spacing: dp(8)
+                        size_hint_x: .8
+                        Text:
+                            text: 'Recent one-week out sale'
+                            font_size: app.fonts.size.h6
+                            color: app.colors.secondary
+                            font_name: app.fonts.subheading
+                            size_hint_y: None
+                            height: dp(18)
+                        Text:
+                            text: '$ 40, 386.02'
+                            font_size: app.fonts.size.h2
+                            color: app.colors.secondary
+                            font_name: app.fonts.heading
+                    AnchorLayout:
+                        size_hint_x: .2
+                BoxLayout:
+                    id: graph
+        BoxLayout:
+            spacing: dp(8)
+            size_hint_y: .3
+            ShadowBox:
+                radius: [dp(14)]
+                elevation: 2
+    BoxLayout:
+        size_hint_x: .25
+        ShadowBox:
